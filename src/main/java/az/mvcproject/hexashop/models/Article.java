@@ -15,6 +15,7 @@ public class Article {
     private Long id;
     private String title;
     private String description;
+    private  String photoUrl;
     @Column(nullable = true)
     private int viewCount;
     @ManyToOne()
