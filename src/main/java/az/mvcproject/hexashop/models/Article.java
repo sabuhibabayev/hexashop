@@ -5,18 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "articles")
+public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private  String name;
-    @OneToMany(mappedBy = "category")
-    private List<Article> articles = new ArrayList<>();
+    private String title;
+    private String description;
+    @Column(nullable = true)
+    private int viewCount;
+    @ManyToOne()
+    private Category category;
 }
