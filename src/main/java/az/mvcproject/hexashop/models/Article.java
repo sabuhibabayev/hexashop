@@ -15,9 +15,8 @@ public class Article {
     private Long id;
     private String title;
     private String description;
-    private  String photoUrl;
-    @Column(nullable = true)
-    private int viewCount;
+    private  String photo_url;
+    private Long price;
     @ManyToOne()
     private Category category;
 }
